@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor's Panel</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+    /* Header Styles */
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sidebar Links */
+    .sidebar {
+      width: 20%;
+      float: left;
+      background-color: #003366;
+      padding: 20px;
+      height: 100vh;
+      color: white;
+    }
+    .sidebar a {
+      color: white;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      background-color: #004080;
+      border-radius: 5px;
+    }
+    .sidebar a:hover {
+      background-color: #0059b3;
+    }
+
+    /* Main Section */
+    .main {
+      margin-left: 22%;
+      padding: 20px;
+    }
+
+    /* Basic Info Section */
+    .basic-info {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #ddd;
+      margin-bottom: 20px;
+    }
+    .basic-info h2 {
+      margin-top: 0;
+    }
+
+    /* Search Patient Section */
+    .search-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #ddd;
+      margin-bottom: 20px;
+    }
+    .search-section input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .search-section input[type="button"] {
+      padding: 10px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-section input[type="button"]:hover {
+      background-color: #004080;
+    }
+
+    /* Queries Section */
+    .queries-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #ddd;
+    }
+    .queries-section h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div>
+      <div style="display: flex; align-items: center; justify-content: center;"><img src="doctor.jpg" alt="Doctor Profile">
+      <h1 style="padding-left: 0.3em;">Dr. John Doe</h1></div>
+    </div>
+    <nav>
+      <a href="#basic-info">Basic Info</a>
+      <a href="#search-patient">Search Patient</a>
+      <a href="#queries">Queries</a>
+    </nav>
+  </header>
+
+  <!-- Sidebar Links -->
+  <div class="sidebar">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#patients">Patients</a>
+    <a href="#appointments">Appointments</a>
+    <a href="#queries">Queries</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    
+    <!-- Basic Info Section -->
+    <section id="basic-info" class="basic-info">
+      <h2>Basic Info</h2>
+      <p><strong>Name:</strong> Dr. John Doe</p>
+      <p><strong>Specialty:</strong> Cardiologist</p>
+      <p><strong>Experience:</strong> 10 Years</p>
+      <p><strong>Location:</strong> City Hospital, New Delhi</p>
+    </section>
+
+    <!-- Search Patient Section -->
+    <section id="search-patient" class="search-section">
+      <h2>Search and Update Patient</h2>
+      <input type="text" id="patient-id" placeholder="Enter Patient ID (e.g., patient1)">
+      <input type="button" value="Search" onclick="searchPatient()">
+      <div id="search-result"></div>
+    </section>
+
+      <!-- Appointment Section -->
+      <section id="queries" class="queries-section">
+        <h2>Appointment</h2>
+        <p>All the upcoming Appointment will be displayed here</p>
+      </section>
+   <Div style="padding:0.6em;"></Div>
+    <!-- Queries Section -->
+    <section id="queries" class="queries-section">
+      <h2>Queries</h2>
+      <p>Patient medical history inquiries, treatment suggestions, and other important queries will appear here.</p>
+    </section>
+
+  </div>
+
+  <script>
+    // Simple function to demonstrate search functionality
+    function searchPatient() {
+      const patientId = document.getElementById('patient-id').value;
+      const resultDiv = document.getElementById('search-result');
+      
+      if (patientId === 'patient1') {
+        resultDiv.innerHTML = '<p><strong>Patient Name:</strong> Jane Doe</p><p><strong>Age:</strong> 35</p><p><strong>Condition:</strong> Hypertension, Diabeties</p> <input type="button" value="Record"> <p> <input type="button" value="Update"> </p>  ';
+      } else {
+        resultDiv.innerHTML = '<p>No patient found with this ID.</p>';
+      }
+    }
+  </script>
+
+</body>
+</html>

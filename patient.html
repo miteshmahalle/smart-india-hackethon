@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Global Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+   
+    /* Info Sections */
+    .info-section {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.547);
+        
+    }
+
+    .info-section h2 {
+        color: #0a192f;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .info-content {
+        display: flex;
+        align-items: center;
+    }
+
+    .info-img {
+        width: 15em;
+        height: 16em;
+        margin-right: 2em;
+        padding-bottom: 1em;
+    }
+
+    .info-details p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .baseinfo{
+        display: flex;
+        gap: 0.5em;
+
+    }
+
+    /* Medical Records */
+    .records-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .record {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.359);
+    }
+
+    .record img {
+        height: 6em;
+        width: 6em;
+        margin-bottom: 1em;
+    }
+
+    .btn-download {
+        background-color: #0a192f;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        display: inline-block;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-download:hover {
+        background-color: #0056b3;
+    }
+
+    /* Predictive Analytics */
+    .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .analytics-item {
+        padding: 20px;
+        background-color: #60030f;
+        text-align: center;
+        color: #f0f4f8;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-size: 18px;
+    }
+
+    .btn-consult {
+        display: block;
+        margin: 40px auto;
+        background-color: #0a192f;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-size: 18px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-consult:hover {
+        background-color: #0056b3;
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #0a192f;
+        color: white;
+        font-size: 16px;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+    /* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1em;
+    background-color: rgba(37, 37, 37, 0.8); /* White background with 50% opacity */
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 1.5em;
+}
+
+.plogo{
+    width: 2em;
+    height: 2em;
+    margin-right: 1em ;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3em;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+}
+
+.nav-buttons .btn {
+    background-color: #053583;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-buttons .emergency-btn {
+    background-color: #d32f2f;
+}
+
+.mlimg{
+    height: 20em;
+    width: auto;
+    align-self: center;
+    justify-self: center;
+    padding-bottom: 2em;
+
+}
+
+</style>
+
+
+<body>
+
+    <header>
+        <nav>
+            
+            <div class="logo">
+                <img src="p1.png" class="plogo">
+                <h2>Amit Patil</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#Baseinfo">Details</a></li>
+                <li><a href="#Medinfo">Records</a></li>
+                <li><a href="#about">Analysis</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn emergency-btn">Consultation</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div style="padding: 2em;"></div>
+    <!-- Basic Info Section -->
+    <section id="basic-info" class="info-section">
+        <h2>Basic Info</h2>
+        <div class="info-content">
+            <img src="baseinfo1.png" alt="Basic Info" class="info-img">
+            <div class="baseinfo">
+            <div class="info-details">
+                <p><strong>Age:</strong> 45</p>
+                <p><strong>Height:</strong> 5'10"</p>
+                <p><strong>Weight:</strong> 72 </p>
+                <p><strong>Gender:</strong> Male</p>
+
+                <p><strong>Contact:</strong> +91 89790 89789</p>
+                <p><strong>Emergency Contact:</strong> +91 90790 78789</p>
+               
+            </div>
+            <div class="info-details">
+                <p><strong>Blood Group:</strong> O+</p>
+                <p><strong>Current Medications:</strong> Aspirin, Lisinopril</p>
+                <p><strong>Allergies:</strong> Penicillin, Nuts</p>
+                <p><strong>Chronic Conditions:</strong> Hypertension</p>
+                <p><strong>Surgery History:</strong> Appendix</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Medical Records Section -->
+    <section id="medical-records" class="info-section">
+        <h2>Medical Records</h2>
+        <div class="records-grid">
+            <div class="record">
+                <img src="blood.png" alt="Blood Report" class="record-img">
+                <p><strong>Blood Report:</strong></p>
+                <a href="bloodreport.pdf" target="_blank" class="btn-download">Download</a>
+            </div>
+            <div class="record">
+                <img src="xray.png" alt="X-Ray Report" class="record-img">
+                <p><strong>X-Ray Report:</strong></p>
+                <a href="xray-report.pdf" class="btn-download">Download</a>
+            </div>
+            <div class="record">
+                <img src="ecg.png" alt="ECG Report" class="record-img">
+                <p><strong>ECG Report:</strong></p>
+                <a href="ecg-report.pdf" class="btn-download">Download</a>
+            </div>
+            <div class="record">
+                <img src="medicine.png" alt="Prescription" class="record-img">
+                <p><strong>Prescription:</strong></p>
+                <a href="prescription.pdf" class="btn-download">Download</a>
+            </div>
+            <div class="record">
+                <img src="urine.png" alt="Prescription" class="record-img">
+                <p><strong>Urine Test:</strong></p>
+                <a href="prescription.pdf" class="btn-download">Download</a>
+            </div>
+            <div class="record">
+                <img src="vaccine.png" alt="Prescription" class="record-img">
+                <p><strong>Vaccination:</strong></p>
+                <a href="prescription.pdf" class="btn-download">Download</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Predictive Analytics Section -->
+    <section id="predictive-analytics" class="info-section">
+        <h2>Predictive Analytics</h2>
+        <img src="ml.png" class="mlimg">
+        <div class="analytics-grid">
+            <div class="analytics-item" style="background-color: #10b70d;">
+                <p><strong>Diabetes Risk:</strong> 15%</p>
+            </div>
+            <div class="analytics-item">
+                <p><strong>Kidney Disease:</strong> 70%</p>
+            </div>
+            <div class="analytics-item" style="background-color: #10b70d;">
+                <p><strong>Heart Disease Risk:</strong> 25%</p>
+            </div>
+            
+        </div>
+        <div style="padding-top: 1em; font-size: 1.5em;">You might have a chance of getting Hypertension, we suggest you lower your sodium intake and improve your diet. Workout daily for atleast 20 mins. For better prevention and treatment you should contact the cardiologistic.</div>
+        <button class="btn-consult">Consultation</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 MedVision | All rights reserved</p>
+    </footer>
+
+</body>
+</html>

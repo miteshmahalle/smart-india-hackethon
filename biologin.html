@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedVision - Emergency Login</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://source.unsplash.com/1600x900/?health,care');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    /* Emergency login container */
+    .emergency-login {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+      width: 400px;
+    }
+
+    h2 {
+      color: #003366;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .scan-option {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 20px;
+      padding: 1em;
+    }
+
+    .scan-option div {
+      width: 30%;
+      background-color: #003366;
+      color: white;
+      padding: 0.8em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .scan-option div:hover {
+      background-color: #004080;
+    }
+
+    /* Scan animation */
+    .scanning {
+      width: 100%;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 30px;
+      display: none;
+    }
+
+    .scanning div {
+      width: 0%;
+      height: 100%;
+      background-color: #28a745;
+      animation: scanning 3s linear forwards;
+    }
+
+    @keyframes scanning {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    /* Popup notification */
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background overlay -->
+  <div class="overlay"></div>
+
+  <!-- Emergency login form -->
+  <div class="emergency-login">
+    <h2>Emergency Login</h2>
+    <p>Select a scan method:</p>
+
+    <div class="scan-option" styles="">
+      <div onclick="startScan('Face')" style="margin-left: 1em;">Face Scan</div>
+      <div onclick="startScan('Fingerprint')" style="margin-left: 1em;">Fingerprint</div>
+      <div onclick="startScan('Eye')" style="margin-left: 1em;">Eye Scan</div>
+    </div>
+
+    <!-- Scanning animation bar -->
+    <div class="scanning" id="scan-animation">
+      <div></div>
+    </div>
+
+    <!-- Popup notification -->
+    <div class="popup" id="popup-notification">
+      Emergency contacts have been alerted.
+    </div>
+  </div>
+
+  <script>
+    function startScan(method) {
+      const scanAnimation = document.getElementById('scan-animation');
+      const popupNotification = document.getElementById('popup-notification');
+
+      // Show scanning animation
+      scanAnimation.style.display = 'block';
+      scanAnimation.querySelector('div').style.width = '0%';
+
+      // Simulate scan animation duration (3 seconds)
+      setTimeout(() => {
+        alert(method + ' scan successful!');
+        // Show popup notification after scanning
+        popupNotification.classList.add('show');
+
+        // Redirect to patient.html after 2 seconds
+        setTimeout(() => {
+          window.location.href = 'emerpatient.html';
+        }, 2000);
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

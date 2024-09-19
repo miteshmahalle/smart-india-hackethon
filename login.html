@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedVision - Login</title>
+  <style>
+    /* General body styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://source.unsplash.com/1600x900/?health,care');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Semi-transparent overlay to darken the background */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    /* Login container */
+    .login-container {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 350px;
+    }
+
+    /* Login header */
+    h2 {
+      color: #003366;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    /* Input fields */
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 0.5em;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    /* Button */
+    input[type="button"] {
+    width: 75%;
+      padding: 0.7em;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="button"]:hover {
+      background-color: #004080;
+    }
+
+    /* Error message */
+    .error {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Link styling */
+    .forgot-password {
+      color: #003366;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: white;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background overlay -->
+  <div class="overlay"></div>
+
+  <!-- Login Form -->
+  <div class="login-container">
+    <h2>MedVision Login</h2>
+    <input type="text" id="userId" placeholder="Enter ID" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <input type="button" value="Login" onclick="login()">
+    <div class="error" id="error-message">Invalid ID or Password!</div>
+    <div style="padding-top: 1em;"><a href="#" class="forgot-password" >Forgot your password?</a></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; MedVision
+  </footer>
+
+  <script>
+    function login() {
+      const userId = document.getElementById('userId').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('error-message');
+
+      // Password check
+      if (password !== '1234') {
+        errorMessage.style.display = 'block';
+        return;
+      }
+
+      // ID check and redirection
+      if (userId === 'patient1') {
+        window.location.href = 'patient.html';
+      } else if (userId === 'doctor1') {
+        window.location.href = 'doctor.html';
+      } else if (userId === 'admin1') {
+        window.location.href = 'adminpage.html';
+      } else {
+        errorMessage.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

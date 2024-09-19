@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        /* Global Styles */
+        body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+        /* Header Styles */
+        header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(37, 37, 37, 0.8); /* White background with 50% opacity */
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 1.5em;
+}
+
+.plogo{
+    width: 2em;
+    height: 2em;
+    margin-right: 1em ;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3em;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+}
+
+.nav-buttons .btn {
+    background-color: #053583;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-buttons .emergency-btn {
+    background-color: #d32f2f;
+}
+
+        /* Admin Panel Sections */
+        .container {
+            width: 85%;
+            margin: 20px auto;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .dashboard img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section p{
+            font-size: 1.2em;
+            padding-bottom: 1em;
+        }
+
+        .section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.497);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            color: #0a192f;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        /* Manage Users */
+        .manage-users {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .manage-users table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .manage-users table th, .manage-users table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .manage-users table th {
+            background-color: #0a192f;
+            color: white;
+        }
+
+        .manage-users table td button {
+            padding: 8px 12px;
+            background-color: #0a192f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .manage-users table td button:hover {
+            background-color: #007bff;
+        }
+
+        /* Queries and Notifications Stacked */
+        .queries, .notifications {
+            width: 100%;
+        }
+
+        /* Attractive Table Styles for Queries and Notifications */
+        .queries table, .notifications table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .queries table th, .queries table td, .notifications table th, .notifications table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .queries table th, .notifications table th {
+            background-color: #0a192f;
+            color: white;
+        }
+
+        .queries table td, .notifications table td {
+            background-color: #f9f9f9;
+        }
+
+        .queries table td:hover, .notifications table td:hover {
+            background-color: #eaf0f6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0a192f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+   
+    <header>
+        <nav>
+            
+            <div class="logo">
+                <img src="p1.png" class="plogo">
+                <h2>Mr. Raj Patil</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#Baseinfo">Details</a></li>
+                <li><a href="#Medinfo">Queries</a></li>
+                <li><a href="#about">Notifications</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn emergency-btn">System Check</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Body Content -->
+    <div class="container">
+        <!-- Dashboard Section -->
+        <div class="section dashboard" style="padding-top: 4em;">
+            <div style="flex: 1; margin-right: 20px;">
+                <h3>Admin Dashboard Overview</h3>
+                <p>Access detailed insights and analytics on platform performance, user activity, and healthcare trends.</p>
+                <img src="dashboard.png" alt="Dashboard Overview">
+            </div>
+        </div>
+
+        <!-- Manage Users Section -->
+        <div class="section manage-users">
+            <h3>Manage Users</h3>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>Sahil Wagh</td>
+                    <td>sw@example.com</td>
+                    <td>Patient</td>
+                    <td><button>Edit</button> <button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Alex Smith</td>
+                    <td>as@example.com</td>
+                    <td>Doctor</td>
+                    <td><button>Edit</button> <button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Abhay Mehta</td>
+                    <td>am@example.com</td>
+                    <td>Patient</td>
+                    <td><button>Edit</button> <button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Anuj Jain</td>
+                    <td>aj@example.com</td>
+                    <td>Doctor</td>
+                    <td><button>Edit</button> <button>Delete</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Queries Section -->
+        <div class="section queries">
+            <h3>Queries</h3>
+            <table>
+                <tr>
+                    <th>Query ID</th>
+                    <th>User</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>#001</td>
+                    <td>JohnDoe</td>
+                    <td>Unable to access medical report</td>
+                    <td>Open</td>
+                </tr>
+                <tr>
+                    <td>#002</td>
+                    <td>JaneSmith</td>
+                    <td>Error in Predictive Analytics</td>
+                    <td>Resolved</td>
+                </tr>
+                <tr>
+                    <td>#003</td>
+                    <td>JohnDoe</td>
+                    <td>Unable to access medical report</td>
+                    <td>Open</td>
+                </tr>
+                <tr>
+                    <td>#004</td>
+                    <td>JaneSmith</td>
+                    <td>System Error, No updation</td>
+                    <td>Resolved</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Notifications Section -->
+        <div class="section notifications">
+            <h3>Notifications</h3>
+            <table>
+                <tr>
+                    <th>Notification ID</th>
+                    <th>User</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>#N001</td>
+                    <td>JohnDoe</td>
+                    <td>Your medical report has been uploaded</td>
+                    <td>12-Aug-2024</td>
+                </tr>
+                <tr>
+                    <td>#N002</td>
+                    <td>JaneSmith</td>
+                    <td>Predictive analytics updated</td>
+                    <td>10-Aug-2024</td>
+                </tr>
+                <tr>
+                    <td>#N003</td>
+                    <td>King Smith</td>
+                    <td>Predictive analytics updated</td>
+                    <td>10-Aug-2024</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>MedVision &copy; 2024 - All Rights Reserved</p>
+    </div>
+</body>
+</html>
